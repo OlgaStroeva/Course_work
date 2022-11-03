@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resourses/icons8-great-britain-100.png</file>
+        <file>Resourses/icons8-russian-federation-100.png</file>
+        <file>Resourses/background.png</file>
+        <file>Resourses/background1.jpg</file>
+        <file>Resourses/background2.jpg</file>
+        <file>Resourses/background3.jpg</file>
+        <file>Resourses/icons8-circled-user-male-skin-type-7-64.png</file>
+        <file>Resourses/icons8-great-britain-50.png</file>
+        <file>Resourses/icons8-pause-button-100.png</file>
+        <file>Resourses/icons8-russian-federation-50.png</file>
+        <file>Resourses/icons8-star-100.png</file>
+        <file>Resourses/Keyboard.png</file>
+        <file>Resourses/mistake.png</file>
+        <file>Resourses/pause.png</file>
+        <file>Resourses/timer.png</file>
+        <file>Resourses/Timer.png</file>
+        <file>Resourses/transparent.png</file>
+        <file>Resourses/v960-ning-05.jpg</file>
+        <file>Resourses/back1.png</file>
+        <file>Resourses/back2.png</file>
+        <file>Resourses/back3.png</file>
+    </qresource>
+</RCC>
