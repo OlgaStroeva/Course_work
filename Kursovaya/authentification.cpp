@@ -1,8 +1,9 @@
 #include "authentification.h"
 #include "ui_authentification.h"
 
-Authentification::Authentification(Account &user, QWidget *parent) : user(user),
+Authentification::Authentification(Account &user, QWidget *parent) :
   QDialog(parent),
+  user(user),
   ui(new Ui::Authentification)
 {
   ui->setupUi(this);
@@ -20,19 +21,15 @@ Authentification::~Authentification()
   delete ui;
 }
 
-bool autnetificationSuccess;
-QString nickname;
-
 void Authentification::on_pushButton_clicked()
 {
-  nickname = ui->textEdit->toPlainText();
-  autnetificationSuccess = nickname=="nick" && ui->textEdit_2->toPlainText() == "0";
-  if (!(autnetificationSuccess)){
-    ui->label_4->setText("Неправильный пароль или логин");
-    }
-  else{
-        user.Nickname = nickname;
-        close();
+  if(user.successConnection){
+      QString Nickname = ui -> textEdit -> toPlainText();
+      QString password = ui -> textEdit_2 -> toPlainText();
+      if(user.Authentification(Nickname, password))
+         close();
+      else
+        ui->label_4->setText("Неправильный пароль или логин");
     }
 }
 

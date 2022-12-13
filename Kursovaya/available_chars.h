@@ -6,9 +6,10 @@ class Available_chars
 {
 public:
   Available_chars(int diff, int lang); // 0 - для всех текстов, 1 - английский, 2/3 - повышенный уровень сложности (средний), сложный - всё, везде и сразу
+  Available_chars(QString Text);
   QString set_text = "", main_text = "", main_text_len;
 private:
-  int count = 145;
+  int count = 100;
 };
 
 #endif // AVAILABLE_CHARS_H

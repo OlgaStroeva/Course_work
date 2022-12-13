@@ -3,9 +3,13 @@
 
 #include <QWidget>
 #include "available_chars.h"
-#include "mainwindow.h"
+#include "QPainter"
+#include "QPalette"
+#include "pause.h"
+#include "report.h"
 #include <QTimer>
 #include <QTime>
+#include "keyboard.h"
 
 namespace Ui {
   class Level;
@@ -14,13 +18,12 @@ namespace Ui {
 class Level : public QWidget
 {
   Q_OBJECT
-protected:
-  //virtual void keyPressEvent(QKeyEvent *event);
 
 public:
-  explicit Level(QWidget *parent = nullptr);
-  Level(int, bool, QWidget*);
-  ~Level();  
+  explicit Level(const Account &user, UsersProgress *progress, QWidget *parent = nullptr);
+  Level(int Difficulty, bool Language, QWidget*, const Account &user, UsersProgress *progress = new UsersProgress());
+  ~Level();
+  //friend Pause;
 
 private slots:
   void updateTime();
@@ -33,16 +36,23 @@ private:
   QTimer *tmr;
   int mistakes = 0;
   int start = 0;
+  const Account &user;
+  bool lang;
+  int countOfEnterd;
+  Keyboard *chars;
+  int sum = 0;
+
   Ui::Level *ui;
   void closeEvent (QCloseEvent *);
-  //void paintEvent(QPaintEvent*);
+  //bool saved;
   void Mistakes(int count);
-  void Keyboard();
+  //void Keyboard();
   int a = 1;
-  Available_chars *text;
+  Available_chars *text = nullptr;
   //void setText(int a);
   bool Continue = true;
-  QString str = "", tempStr;
+  //Keyboard *keyboard;
+  QString str = "", htmlStr;
   bool html = 1;
 };
 

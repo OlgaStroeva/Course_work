@@ -21,5 +21,8 @@
         <file>Resourses/back1.png</file>
         <file>Resourses/back2.png</file>
         <file>Resourses/back3.png</file>
+        <file>Resourses/TaskBackground.png</file>
+        <file>Resourses/star(1).png</file>
+        <file>Resourses/icons8-information-100.png</file>
     </qresource>
 </RCC>

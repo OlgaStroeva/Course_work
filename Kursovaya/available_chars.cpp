@@ -1,15 +1,15 @@
 #include "available_chars.h"
 #include "Random.hpp"
 
-const QString chars_for_texts[] = { " 1234567890-=/*",
+const QString chars_for_texts[] = { " 1234567890-=",
                           "`qwertyuop[]\\asdfghjkl;'zxcvbnm,./",
                           "ёйцукенгшщзхъ\\фывапролджэячсмитьбю.",
-                          "~@#$^&{}|<>",
+                          "~@#$^&{}|<>*",
                           "№;/,",
                             "QWERTYUIOPASDFGHJKLZXCVBNMЙЦУГШЩЪФЫПЛДЖЭЯЧИЬБЮ",
-                            "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮQWRYUI[]SDFGJL;'ZCVN/",
+                            "ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮQWRYUI[]SDFGJL;\'ZCVN/",
                                   "ёйцукнгшщзъфывплджэячмитьбю",
-                                  "qwrtyui[]sdfghjkl'zvbnm"};
+                                  "qwrtyui[]sdfghjkl\'zvbnm`"};
 
 Available_chars::Available_chars(int diff, int lang)
 {
@@ -27,7 +27,15 @@ Available_chars::Available_chars(int diff, int lang)
       symb = rez_alphabet[Random::get(0, size-1)];
       set_text.append(symb);
       main_text.append(symb);
-      if(!(i%38) && symb != ' ') set_text.append('\n');
+      if(!(i%28) && symb != ' ') set_text.append('\n');
   }
+  main_text_len = QString::number(main_text.length());
+}
+
+Available_chars::Available_chars(QString Text){
+  main_text = Text;
+  set_text = Text;
+  for(int i = 28; i< count; i+= 29)
+    set_text.insert(i, "\n");
   main_text_len = QString::number(main_text.length());
 }

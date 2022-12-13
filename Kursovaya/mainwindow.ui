@@ -65,7 +65,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>530</x>
       <y>20</y>
       <width>281</width>
       <height>64</height>
@@ -88,7 +88,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>450</x>
       <y>20</y>
       <width>61</width>
       <height>61</height>
@@ -116,6 +116,18 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Задания</string>
+    </property>
+    <property name="toolTipDuration">
+     <number>10</number>
+    </property>
+    <property name="statusTip">
+     <string>Задания</string>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Задания&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -123,7 +135,9 @@
      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));
  background-image: url(&quot;/home/olga/Kursovaya/Resourses/icons8-star-100.png&quot;) no-repeat right bottom;
     border: none;
-    outline: none;</string>
+    outline: none;
+
+color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:0.962567 rgba(255, 255, 255, 0));</string>
     </property>
     <property name="text">
      <string/>
@@ -133,6 +147,9 @@
       <width>80</width>
       <height>80</height>
      </size>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+A</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
@@ -182,6 +199,39 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb
        <normaloff>:/Resourses/icons8-russian-federation-100.png</normaloff>:/Resourses/icons8-russian-federation-100.png</iconset>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>0</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));
+ background-image: url(:/Resourses/icons8-information-100.png);
+    border: none;
+    outline: none;
+
+color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 0), stop:0.962567 rgba(255, 255, 255, 0));</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>80</width>
+      <height>80</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+A</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

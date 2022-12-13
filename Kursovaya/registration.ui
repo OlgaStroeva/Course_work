@@ -34,7 +34,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="Nickname">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -53,7 +53,7 @@
     </font>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="password">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -172,6 +172,9 @@ border: none;</string>
    </property>
    <property name="text">
     <string>OK</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
    </property>
   </widget>
  </widget>

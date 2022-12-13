@@ -14,7 +14,6 @@ class Enter : public QDialog
   Q_OBJECT
 
 public:
-  //Account* user;
   explicit Enter(Account &user, QWidget *parent = nullptr);
   ~Enter();
 

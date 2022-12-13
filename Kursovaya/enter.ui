@@ -116,6 +116,9 @@ border: none;</string>
    <property name="text">
     <string>Играть без аккаунта</string>
    </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">

@@ -1,11 +1,9 @@
 #include "registration.h"
 #include "ui_registration.h"
-#include <QtSql/QSql>
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlDriver>
 
-Registration::Registration(QWidget *parent) :
+Registration::Registration(Account &user, QWidget *parent) :
   QDialog(parent),
+  user(user),
   ui(new Ui::Registration)
 {
   ui->setupUi(this);
@@ -18,9 +16,6 @@ Registration::Registration(QWidget *parent) :
 }
 
 
-//ОБЯЗАТЕЛЬНО дописать проверку БД на такие же имена, потому что это - ключ и всё упадёт, если писать без этого. Ну, не прям всё, но пользователи будут спокойно переписывать чужие пароли
-
-
 Registration::~Registration()
 {
   delete ui;
@@ -28,16 +23,15 @@ Registration::~Registration()
 
 void Registration::on_pushButton_clicked()
 {
-    /*QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setUserName("root");
-    db.setPassword("1KoTt&2!!");
-    db.setDatabaseName("typeBetter");
-    bool ok = db.open();
-    if(ok){
-        db.close();
-      close();
-      }*/
+    if(user.successConnection){
+        QString Nickname{ui -> Nickname -> toPlainText()};
+        QString password{ui -> password -> toPlainText()};
+        if(user.checkForExistingUser(Nickname)){
+            user.createNewUser(password, Nickname);
+            close();
+          }
+        else ui -> Nickname -> setHtml("<font color=\"Red\">Данное имя уже занято");
+      }
 
 }
 

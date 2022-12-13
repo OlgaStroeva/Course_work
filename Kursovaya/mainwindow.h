@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets/QMainWindow>
-#include <account.h>
+//#include "level.h"
+#include "enter.h"
 #include "description.h"
 
 QT_BEGIN_NAMESPACE
@@ -16,12 +17,15 @@ class MainWindow : public QMainWindow
 public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
-  //Account *user;
 
 private slots:
   //void on_pushButton_clicked();
 
   void on_comboBox_activated(int index);
+
+  void on_pushButton_2_clicked();
+
+  void on_pushButton_3_clicked();
 
 private:
   Account user;
