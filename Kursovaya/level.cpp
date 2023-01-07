@@ -148,12 +148,10 @@ void Level::on_textEdit_textChanged()
               }*/
             try { //чисто формальная штука
               ui->progress->setText(QString::number(str.length()-mistakes) + "/" + text->main_text_len);
-              if(str.length()-mistakes >= (text->main_text_len).toInt())
-                throw 1;
               chars->setActivChar((text->main_text)[str.length()-mistakes]);
               chars->repaint();
 
-            }  catch (int a) {
+            }  catch (...) {
               if(user.Nickname != "" && mistakes<=3) user.UpdateTasks(this->a, start);
               close();
               return;
