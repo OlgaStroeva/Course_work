@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
   ui->setupUi(this);
 
-  QPixmap bkgnd("/home/olga/Kursovaya/Resourses/background.png"); //Установка красивого фона
+  QPixmap bkgnd(":/Resourses/background.png"); //Установка красивого фона
      bkgnd = bkgnd.scaled(size(), Qt::IgnoreAspectRatio);
      QPalette p = palette();
      p.setBrush(QPalette::Window, bkgnd);
@@ -52,7 +52,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-  QString link = "/home/olga/Kursovaya/Resourses/Information/read_me.html"; // rename the file
+  QString link = ":/Resourses/Information/read_me.html"; // rename the file
   //QString link = QDir::currentPath()+"/Resourses/Information/read_me.html";
   try {
     if(!QDesktopServices::openUrl(QUrl(link.trimmed()))) throw 1;

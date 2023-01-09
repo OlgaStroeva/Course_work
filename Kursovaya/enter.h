@@ -9,7 +9,7 @@ namespace Ui {
   class Enter;
 }
 
-class Enter : public QDialog
+class Enter : public QDialog //класс обеспечивающий выбор типа входа в приложение
 {
   Q_OBJECT
 

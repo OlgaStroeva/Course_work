@@ -1,5 +1,6 @@
 #include "level.h"
 #include "ui_level.h"
+#include "exception"
 //лабораторные наследование и виртуальность
 //Спарвочная система
 //Добавить звук событий
@@ -116,12 +117,10 @@ void Level::on_textEdit_textChanged()
 {
   if(html){
       int N = 1;
-  //Tempstr = ui->textEdit->toPlainText();
     if((ui->textEdit->toPlainText()).length() > str.length()) {
         str = ui->textEdit->toPlainText();
-        //str.append(tempStr[tempStr.length()-1]);
         if(str[str.length()-1] == '<'){
-          htmlStr.append("&lt;");
+          htmlStr.append("&lt;"); // < = &it; > = &gt;
           N = 4;
           }
         else if(str[str.length()-1] == '>'){
@@ -133,21 +132,17 @@ void Level::on_textEdit_textChanged()
           N = 1;
           }
         ui->textEdit->moveCursor(QTextCursor::End);
+        try {
         QChar a = str[str.length()-1], b = (text->main_text)[str.length()-1-mistakes];
         if(QString::compare(a, b)!=0){
             ++mistakes;
             if(mistakes<=3)
-              Mistakes(mistakes);//update();
+              Mistakes(mistakes);
           htmlStr.insert(htmlStr.length()-N, "<font color=\"Red\">");
           htmlStr.append("</font><font color=\"Black\">");
-          } /*else {
-            if(str.length()-mistakes == (text->main_text_len).toInt()){
-              if(user.Nickname != "" && mistakes<=3) user.UpdateTasks(this->a, start);
-              close();
-              return;
-              }*/
-            try { //чисто формальная штука
+          }
               ui->progress->setText(QString::number(str.length()-mistakes) + "/" + text->main_text_len);
+              if(str == (text->main_text)) throw true;
               chars->setActivChar((text->main_text)[str.length()-mistakes]);
               chars->repaint();
 
@@ -156,14 +151,10 @@ void Level::on_textEdit_textChanged()
               close();
               return;
             }
-
-          //}
     }
     html = 0;
     ui->textEdit->setHtml("<body>" + htmlStr + "</body>");
-    // < = &it; > = &gt;
     html = 1;
-
     ui->textEdit->moveCursor(QTextCursor::End);
     }
 }

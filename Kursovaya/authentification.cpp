@@ -9,7 +9,7 @@ Authentification::Authentification(Account &user, QWidget *parent) :
   ui->setupUi(this);
   ui->label_4->setStyleSheet("color: #FF0000");
 
-  QPixmap bkgnd("/home/olga/Kursovaya/Resourses/background.png");
+  QPixmap bkgnd(":/Resourses/background.png");
      bkgnd = bkgnd.scaled(size(), Qt::IgnoreAspectRatio);
      QPalette p = palette();
      p.setBrush(QPalette::Window, bkgnd);

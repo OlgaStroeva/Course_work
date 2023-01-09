@@ -3,13 +3,12 @@
 
 #include <QDialog>
 #include <account.h>
-//#include "enter.h"
 
 namespace Ui {
   class Authentification;
 }
 
-class Authentification : public QDialog
+class Authentification : public QDialog //класс для аутентификации пользователей в приложении
 {
   Q_OBJECT
 

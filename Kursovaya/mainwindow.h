@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets/QMainWindow>
-//#include "level.h"
 #include "enter.h"
 #include "description.h"
 
@@ -10,7 +9,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow //класс основного меню приложения
 {
   Q_OBJECT
 
@@ -19,7 +18,6 @@ public:
   ~MainWindow();
 
 private slots:
-  //void on_pushButton_clicked();
 
   void on_comboBox_activated(int index);
 
@@ -30,6 +28,6 @@ private slots:
 private:
   Account user;
   Ui::MainWindow *ui;
-  Description **descr = new Description*[3];
+  Description **descr = new Description*[3]; //уровни сложности
 };
 #endif // MAINWINDOW_H

@@ -8,7 +8,7 @@ namespace Ui {
   class Tasks;
 }
 
-class Tasks : public QWidget
+class Tasks : public QWidget //класс, отображающий все задания пользователя
 {
   Q_OBJECT
 
@@ -16,11 +16,9 @@ public:
   explicit Tasks(QWidget *parent = nullptr);
   ~Tasks();
   void createTask(QString text, int AmountOfLeft, int Count = 0);
-  //void AddTask(QString text, int Number);
     SingleTask **tasks = new SingleTask*[7];
 
 private:
-  //void closeEvent (QCloseEvent *);
   int i = 0;
   Ui::Tasks *ui;
 };

@@ -7,7 +7,7 @@ namespace Ui {
   class Report;
 }
 
-class Report : public QDialog
+class Report : public QDialog //класс, отображающий результат тренировки пользователя
 {
   Q_OBJECT
 

@@ -7,7 +7,7 @@ namespace Ui {
   class SavedProgress;
 }
 
-class SavedProgress : public QDialog
+class SavedProgress : public QDialog //класс, позволяющий пользователю загрузить сохраненный прогресс тренировки, посредством класса Account
 {
   Q_OBJECT
 

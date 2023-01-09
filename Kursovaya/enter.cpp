@@ -7,12 +7,12 @@ Enter::Enter(Account &user, QWidget *parent) :
   ui(new Ui::Enter)
 {
   ui->setupUi(this);
-  QPixmap bkgnd("/home/olga/Kursovaya/Resourses/background.png");
+  QPixmap bkgnd(":/Resourses/background.png");
      bkgnd = bkgnd.scaled(size(), Qt::IgnoreAspectRatio);
      QPalette p = palette();
      p.setBrush(QPalette::Window, bkgnd);
      setPalette(p);
-     if(!user.successConnection){
+     if(!user.successConnection){ //catch error with connection with database
         ui->pushButton->setEnabled(false);
         ui->pushButton_2->setEnabled(false);
        }

@@ -7,7 +7,9 @@
 #include <QSqlQuery>
 #include "tasks.h"
 
-struct UsersProgress{
+#include <QDir>
+
+struct UsersProgress{ //структура для обмена данными о сохраненном прогрессе с другими классами
   bool Language;
   int countOfEntered = 0, Time = 0, Mistakes = 0 , Difficulty;
   QString TextOfLevel = "", inputText = "";
@@ -17,29 +19,27 @@ struct UsersProgress{
   UsersProgress(){}
 };
 
-class Account
+class Account //класс для взаимодействия с базой данных
 {
 public:
-  QString Nickname = "";
-  bool autnetificationSuccess = false, successConnection = false;
+  QString Nickname = ""; //имя пользователя
+  bool autnetificationSuccess = false, successConnection = false; //флаги, отображающие статус пользователя и соединения с базой данных
   Tasks currentTasks;
 
   Account();
-  bool checkForExistingUser(QString Nickname) const;
-  void createNewUser(QString, QString);
+  bool checkForExistingUser(QString Nickname) const; //проверка на существования пользователя с таким именем
+  void createNewUser(QString, QString); //создание нового пользователя в базе данных
   bool Authentification(QString Nickname, QString password);
-  void saveProgress(bool Language, int countOfEntered, int Time, int Mistakes, QString TextOfLevel, QString inputText, int Difficulty) const;
-  void deleteSavedProgress() const;
-  bool checkForSavedProgress() const;
-  UsersProgress *getExistingProgress() const;
-  void UpdateTasks(int Difficulty, int Time) const;
+  void saveProgress(bool Language, int countOfEntered, int Time, int Mistakes, QString TextOfLevel, QString inputText, int Difficulty) const; //сохранение текущего прогресса тренировки пользователя
+  void deleteSavedProgress() const; //удаление из базы данных сохраненного прогресса
+  bool checkForSavedProgress() const; //проверка на существование сохраненного прогресса
+  UsersProgress *getExistingProgress() const;//получение данных о сохраненном в базе прогрессе пользователя
+  void UpdateTasks(int Difficulty, int Time) const; //обновление данных о заданиях в базе
 
 private:
-  void CreateTasks();
+  void CreateTasks(); //получение данных о заданиях пользователя
   QSqlDatabase db;
 
 };
-
-
 
 #endif // ACCOUNT_H

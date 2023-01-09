@@ -8,7 +8,7 @@ namespace Ui {
   class Pause;
 }
 
-class Pause : public QDialog
+class Pause : public QDialog //класс приостановки тренировки
 {
   Q_OBJECT
 

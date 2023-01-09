@@ -7,7 +7,7 @@ namespace Ui {
   class SingleTask;
 }
 
-class SingleTask : public QWidget
+class SingleTask : public QWidget //класс, отображающий отдельные задания
 {
   Q_OBJECT
 

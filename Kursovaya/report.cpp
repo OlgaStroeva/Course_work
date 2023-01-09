@@ -7,7 +7,7 @@ Report::Report(QWidget *parent) :
 {
   ui->setupUi(this);
   ui->setupUi(this);
-  QPixmap bkgnd("/home/olga/Kursovaya/Resourses/background.png");
+  QPixmap bkgnd(":/Resourses/background.png");
      bkgnd = bkgnd.scaled(size(), Qt::IgnoreAspectRatio);
      QPalette p = palette();
      p.setBrush(QPalette::Window, bkgnd);

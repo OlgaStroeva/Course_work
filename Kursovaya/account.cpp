@@ -1,5 +1,4 @@
 #include "account.h"
-//схему БД изобразить после UML ER
 
 Account::Account(){
   db = QSqlDatabase::addDatabase("QMYSQL", "localhost");
@@ -155,7 +154,6 @@ void Account::UpdateTasks(int Difficulty, int Time) const{
       if(query.value("Completed").toBool()) continue;
       else{
           bool success = 1;
-          //query1.bindValue(":Number", Number);
 
           int Type, diffOfTask, timeOfTask, AmountOfLeft;
           Type = query1.value("Type").toInt(); diffOfTask = query1.value("Difficulty").toInt();

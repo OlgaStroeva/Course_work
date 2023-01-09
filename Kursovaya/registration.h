@@ -2,14 +2,13 @@
 #define REGISTRATION_H
 
 #include <QDialog>
-#include <QtSql/QSqlDatabase>
 #include <account.h>
 
 namespace Ui {
   class Registration;
 }
 
-class Registration : public QDialog
+class Registration : public QDialog //класс, обеспечивающий регистрацию пользователей посредством доступа к классу Account
 {
   Q_OBJECT
 
