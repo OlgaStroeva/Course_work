@@ -1,13 +1,8 @@
 #include "level.h"
 #include "ui_level.h"
 #include "exception"
-//лабораторные наследование и виртуальность
-//Спарвочная система
-//Добавить звук событий
-//Добавить hint
-//горячие клавиши
-//контекстное меню подумать
-//дописать try cathc для соединения с БД +-
+
+
 Level::Level(const Account &user, UsersProgress *progress, QWidget *parent) :
   QWidget(parent),
   user(user),
