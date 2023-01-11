@@ -52,8 +52,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-  QString link = ":/Resourses/Information/read_me.html"; // rename the file
-  //QString link = QDir::currentPath()+"/Resourses/Information/read_me.html";
+  QString link = QDir::currentPath()+"/Resourses/Information/read_me.html";
   try {
     if(!QDesktopServices::openUrl(QUrl(link.trimmed()))) throw 1;
   }  catch (int a) {
